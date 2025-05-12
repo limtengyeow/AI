@@ -1,15 +1,11 @@
 import os
+
 import sys
-
-# === ADD THIS BLOCK ===
-# Compute project root (one level up from this file)
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-# Prepend env/ so Python can find trading_env.py there
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "env"))
-# ======================
-
-# Now regular imports work:
-from trading_env import TradingEnv
+# ============ BEGIN HARDCODED ENV PATH ============
+# Adjust this to wherever your project root actually is
+# (in Colab that’s usually /content/AI)
+sys.path.insert(0, "/content/AI/env")
+# ============= END HARDCODED ENV PATH =============
 
 
 import glob
