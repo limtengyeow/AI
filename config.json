@@ -4,7 +4,7 @@
     "DATA_FOLDER": "data/",
     "TENSORBOARD_LOG": "tb_logs/"
   },
-  "Great": {
+  "training": {
     "DEFAULT_INTERVAL": "5min",
     "NORM_OBS": true,
     "NORM_REWARD": true,
