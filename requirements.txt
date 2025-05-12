@@ -1,5 +1,6 @@
 stable-baselines3[extra]
 gym==0.25.2
+shimmy>=2.0
 pandas
 numpy
 matplotlib
