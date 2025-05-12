@@ -79,3 +79,37 @@
     "deterministic": true
   }
 }
+
+{
+  "training": {
+    "DATA_FILES": ["data/NVDA_5min.csv", "data/AAPL_5min.csv"],
+    "FEATURE_COLUMNS": ["open", "high", "low", "close", "volume"],
+    "REWARD":   { "scale": 1.0, "clip": [-1, 1] },
+    "POLYGON_API_KEY": "YOUR_KEY_HERE",
+    "PPO_PARAMS": {
+      "learning_rate": 3e-4,
+      "n_steps": 2048,
+      "batch_size": 64,
+      "n_epochs": 10,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_range": 0.2,
+      "ent_coef": 0.0,
+      "vf_coef": 0.5,
+      "policy_kwargs": {
+        "net_arch": [128, 128, 64],
+        "activation_fn": "tanh"
+      }
+    },
+    "TOTAL_TIMESTEPS": 1000000,
+    "MODEL_OUT": "ppo_trend.zip"
+  },
+
+  "evaluation": {
+    "DATA_FILES": ["data/NVDA_5min.csv"],
+    "FEATURE_COLUMNS": ["open", "high", "low", "close", "volume"],
+    "REWARD":   { "scale": 1.0, "clip": [-1, 1] },
+    "MODEL_IN": "ppo_trend.zip",
+    "EVAL_STEPS": 1000
+  }
+}
