@@ -4,3 +4,5 @@ pandas
 numpy
 matplotlib
 tensorboard
+cloudpickle
+polygon-api-client
